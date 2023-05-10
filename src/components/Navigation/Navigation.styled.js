@@ -9,9 +9,16 @@ export const StyledNavLink = styled(NavLink)`
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
+  :hover {
+    font-weight: 800;
+  }
+
   &.active {
     color: white;
   }
+`;
+export const NavigationItem = styled.li`
+  min-width: 64px;
 `;
 
 export const List = styled.ul`

@@ -1,15 +1,20 @@
-import { NavTag, StyledNavLink, List } from './Navigation.styled';
+import {
+  NavTag,
+  StyledNavLink,
+  List,
+  NavigationItem,
+} from './Navigation.styled';
 
 export function Navigation() {
   return (
     <NavTag>
       <List>
-        <li>
+        <NavigationItem>
           <StyledNavLink to="/login">login</StyledNavLink>
-        </li>
-        <li>
+        </NavigationItem>
+        <NavigationItem>
           <StyledNavLink to="/register">register</StyledNavLink>
-        </li>
+        </NavigationItem>
       </List>
     </NavTag>
   );
