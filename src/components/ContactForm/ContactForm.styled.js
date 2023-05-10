@@ -28,7 +28,7 @@ export const Input = styled.input`
 
   :hover,
   :active {
-    border-color: green;
+    border: 2px solid green;
   }
 `;
 

@@ -6,6 +6,7 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+
   :hover {
     border: 2px solid greenyellow;
   }
