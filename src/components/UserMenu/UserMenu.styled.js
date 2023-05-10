@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Div = styled.div`
-  display: flex;
+  display: block;
 `;
 
 export const Ul = styled.ul`
@@ -18,10 +18,19 @@ export const MobileButton = styled.button`
 `;
 
 export const Button = styled.button`
-  margin-left: 10px;
+  margin-left: auto;
   padding: 5px;
   border-radius: 50%;
   border: none;
+  background-color: #fff;
+  color: black;
+  font-weight: 600;
   font-size: inherit;
   cursor: pointer;
+`;
+
+export const NameWrap = styled.p`
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
 `;

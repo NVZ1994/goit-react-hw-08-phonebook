@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
-import { device } from "utils/mediaQueries";
+import { device } from 'utils/mediaQueries';
 
 export const HeaderTag = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: ${props => (props.theme.header.backgroundColor)};
+  background-color: ${props => props.theme.header.backgroundColor};
+  box-shadow: 0px 5px 5px lightslategray;
   z-index: 10;
 
   ${device.mobile} {
     position: static;
   }
-
 `;
 
 export const CoverDiv = styled.div`
@@ -19,10 +19,9 @@ export const CoverDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   min-height: 40px;
-  color: ${props => (props.theme.header.textColor)};
+  color: ${props => props.theme.header.textColor};
 
   ${device.mobile} {
     flex-direction: column;
   }
-
 `;
