@@ -6,10 +6,9 @@ export const signUp = createAsyncThunk('auth/signUp', async data => {
   try {
     const response = await api.signUp(data);
     Notify.success(`${response.user.name}, cogratulations! Now are signed up.`);
-    console.log(response);
     return response;
   } catch (error) {
-    console.log(error);
+    Notify.failure(error.message);
   }
 });
 
@@ -19,7 +18,7 @@ export const signIn = createAsyncThunk('auth/signIn', async data => {
     Notify.success(`${response.user.name}, welcome back to your phonebook`);
     return response;
   } catch (error) {
-    console.log(error);
+    Notify.failure(error.message);
   }
 });
 
@@ -28,7 +27,7 @@ export const signOut = createAsyncThunk('auth/signOut', async () => {
     await api.signOut();
     Notify.failure(`See you later.`);
   } catch (error) {
-    console.log(error);
+    Notify.failure(error.message);
   }
 });
 
@@ -46,7 +45,7 @@ export const refreshUser = createAsyncThunk(
       const response = await api.refreshUser(token);
       return response;
     } catch (error) {
-      return console.log(error);
+      Notify.failure(error.message);
     }
   }
 );

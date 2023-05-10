@@ -9,7 +9,7 @@ export const fetchContacts = createAsyncThunk(
       const contacts = await api.fetchContacts();
       return contacts;
     } catch (error) {
-      console.log(error);
+      Notify.failure(error.message);
     }
   }
 );
@@ -24,7 +24,7 @@ export const addContact = createAsyncThunk(
       );
       return contacts;
     } catch (error) {
-      console.log(error);
+      Notify.failure(error.message);
     }
   }
 );
@@ -37,7 +37,7 @@ export const deleteContact = createAsyncThunk(
       Notify.failure(`${data.name} has been deleted from your contacts list`);
       return data.id;
     } catch (error) {
-      console.log(error);
+      Notify.failure(error.message);
     }
   }
 );
