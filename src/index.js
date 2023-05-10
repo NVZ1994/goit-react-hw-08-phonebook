@@ -6,13 +6,13 @@ import { Provider } from 'react-redux';
 import { App } from 'components/App';
 import { store } from 'redux/store';
 import './index.css';
-import { dark } from 'utils/theme';
+import { light, dark } from 'utils/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter basename="goit-react-hw-08-phonebook">
-        <ThemeProvider theme={dark}>
+        <ThemeProvider theme={light}>
           <App />
         </ThemeProvider>
       </BrowserRouter>
