@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { App } from 'components/App';
 import { store } from 'redux/store';
 import './index.css';
-import { light, dark } from 'utils/theme';
+import { light } from 'utils/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

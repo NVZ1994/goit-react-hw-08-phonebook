@@ -26,7 +26,7 @@ export const signIn = createAsyncThunk('auth/signIn', async data => {
 export const signOut = createAsyncThunk('auth/signOut', async () => {
   try {
     await api.signOut();
-    Notify.failure(`See you soon.`);
+    Notify.failure(`See you later.`);
   } catch (error) {
     console.log(error);
   }

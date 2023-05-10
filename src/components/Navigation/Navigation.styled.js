@@ -14,7 +14,7 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const Ul = styled.ul`
+export const List = styled.ul`
   display: flex;
   gap: 20px;
   list-style: none;
