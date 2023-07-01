@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signUp, signIn, signOut, refreshUser } from './authOperations';
+import {
+  signUp,
+  signIn,
+  signOut,
+  refreshUser,
+  updateAvatar,
+} from './authOperations';
 
 export const auth = createSlice({
   name: 'auth',
   initialState: {
-    user: { name: null, email: null },
+    user: { name: null, email: null, avatar: '' },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -38,6 +44,10 @@ export const auth = createSlice({
     },
     [refreshUser.rejected]: state => {
       state.isRefreshing = false;
+    },
+    [updateAvatar.fulfilled]: (state, action) => {
+      console.log(action.payload);
+      state.user.avatar = action.payload;
     },
   },
 });

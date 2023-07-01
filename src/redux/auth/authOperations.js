@@ -1,6 +1,7 @@
 import { Notify } from 'notiflix';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from 'service/connectionsapi';
+import axios from 'axios';
 
 export const signUp = createAsyncThunk('auth/signUp', async data => {
   try {
@@ -49,3 +50,17 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const updateAvatar = createAsyncThunk('auth/avatar', async file => {
+  try {
+    const formData = new FormData();
+    formData.append('avatar', file);
+    const { data } = await axios.patch('/users/avatar', formData, {
+      headers: { 'content-type': 'multipart/form-data' },
+    });
+    console.log(data.avatar);
+    return data.avatar;
+  } catch (error) {
+    console.log(error);
+  }
+});

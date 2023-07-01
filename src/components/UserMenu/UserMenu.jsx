@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Div, Ul, MobileButton, Button, NameWrap } from './UserMenu.styled';
 import { nameSelector, tokenSelector } from 'redux/selectors';
 import { signOut } from 'redux/auth/authOperations';
+import { Link } from 'react-router-dom';
 
 export function UserMenu() {
   const dispatch = useDispatch();
@@ -14,11 +15,10 @@ export function UserMenu() {
 
   return (
     <Div>
+      <Link to="/profile">Profile</Link>
       <MobileButton>mobile button</MobileButton>
       <Ul>
-        <NameWrap>
-          Welcome, {name.charAt(0).toUpperCase() + name.slice(1)}
-        </NameWrap>
+        <NameWrap>Welcome, {name}</NameWrap>
         <Button onClick={onClick}>Sign out</Button>
       </Ul>
     </Div>

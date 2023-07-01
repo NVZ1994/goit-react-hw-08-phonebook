@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:8000';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -31,7 +31,7 @@ export async function updateContact(contactId) {
 }
 
 export async function signUp(credentials) {
-  const { data } = await axios.post('/users/signup', credentials);
+  const { data } = await axios.post('/users/register', credentials);
   setAuthHeader(data.token);
   return data;
 }
